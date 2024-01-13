@@ -1,139 +1,149 @@
-# Gephi - The Open Graph Viz Platform
-
-[![build](https://github.com/gephi/gephi/actions/workflows/build.yml/badge.svg)](https://github.com/gephi/gephi/actions/workflows/build.yml)
-[![Downloads](https://img.shields.io/github/downloads/gephi/gephi/v0.10.1/total.svg)](https://github.com/gephi/gephi/releases/tag/v0.10.1)
-[![Downloads](https://img.shields.io/github/downloads/gephi/gephi/total.svg)](https://github.com/gephi/gephi/releases/)
-[![Translation progress](https://hosted.weblate.org/widgets/gephi/-/svg-badge.svg)](https://hosted.weblate.org/engage/gephi/?utm_source=widget)
-
-[Gephi](http://gephi.org) is an award-winning open-source platform for visualizing and manipulating large graphs. It runs on Windows, Mac OS X and Linux. Localization is available in English, French, Spanish, Japanese, Russian, Brazilian Portuguese, Chinese, Czech, German and Romanian.
-
-- **Fast** Powered by a built-in OpenGL engine, Gephi is able to push the envelope with very large networks. Visualize networks up to a million elements. All actions (e.g. layout, filter, drag) run in real-time.
-
-- **Simple** Easy to install and [get started](https://gephi.github.io/users/quick-start). An UI that is centered around the visualization. Like Photoshop™ for graphs.
-
-- **Modular** Extend Gephi with [plug-ins](https://gephi.org/plugins). The architecture is built on top of [Apache Netbeans Platform](https://netbeans.apache.org/tutorials/nbm-quick-start.html) and can be extended or reused easily through well-written APIs.
-
-[Download Gephi](https://gephi.github.io/users/download) for Windows, Mac OS X and Linux and consult the [release notes](https://github.com/gephi/gephi/releases). Example datasets can be found on our [wiki](https://github.com/gephi/gephi/wiki/Datasets).
-
-![Gephi](https://gephi.github.io/images/screenshots/select-tool-mini.png)
-
-## Install and use Gephi
-
-Download and [Install](https://gephi.github.io/users/install/) Gephi on your computer. 
-
-Get started with the [Quick Start](https://gephi.github.io/users/quick-start/) and follow the [Tutorials](https://gephi.github.io/users/). Load a sample [dataset](https://github.com/gephi/gephi/wiki/Datasets) and start to play with the data.
-
-If you run into any trouble or have questions consult our [discussions](https://github.com/gephi/gephi/discussions).
-
-## Latest releases
-
-### Stable
-
-- Latest stable release on [gephi.org](https://gephi.org/users/download/).
-
-### Development builds
-
-Development builds are [generated regularly](https://github.com/gephi/gephi/actions/workflows/release.yml). Current version is 0.10.2-SNAPSHOT
-
-- [gephi-0.10.2-SNAPSHOT-windows-x64.exe](https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&g=org.gephi&a=gephi&v=0.10.2-SNAPSHOT&c=windows-x64&p=exe) (Windows)
-
-- [gephi-0.10.2-SNAPSHOT-windows-x32.exe](https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&g=org.gephi&a=gephi&v=0.10.2-SNAPSHOT&c=windows-x32&p=exe) (Windows x32)
-
-- [gephi-0.10.2-SNAPSHOT-macos-x64.dmg](https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&g=org.gephi&a=gephi&v=0.10.2-SNAPSHOT&c=macos-x64&p=dmg) (Mac OS X)
-
-- [gephi-0.10.2-SNAPSHOT-macos-aarch64.dmg](https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&g=org.gephi&a=gephi&v=0.10.2-SNAPSHOT&c=macos-aarch64&p=dmg) (Mac OS X Silicon)
-
-- [gephi-0.10.2-SNAPSHOT-linux-x64.tar.gz](https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&g=org.gephi&a=gephi&v=0.10.2-SNAPSHOT&c=linux-x64&p=tar.gz) (Linux)
-
-## Developer Introduction
-
-Gephi is developed in Java and uses OpenGL for its visualization engine. Built on the top of Netbeans Platform, it follows a loosely-coupled, modular architecture philosophy. Gephi is split into modules, which depend on other modules through well-written APIs. Plugins can reuse existing APIs, create new services and even replace a default implementation with a new one.
-
-Consult the [**Javadoc**](http://gephi.github.io/gephi/0.9.2/apidocs/index.html) for an overview of the APIs.
-
-### Requirements
-
-- Java JDK 11 (or later)
-
-- [Apache Maven](http://maven.apache.org/) version 3.6.3 or later
-
-### Checkout and Build the sources
-
-- Fork the repository and clone
-
-        git clone git@github.com:username/gephi.git
-
-- Run the following command or [open the project in an IDE](https://github.com/gephi/gephi/wiki/How-to-build-Gephi)
-
-        mvn -T 4 clean install
-
-- Once built, one can test running Gephi
-
-		cd modules/application
-		mvn nbm:cluster-app nbm:run-platform
-
-Note that while Gephi can be built using JDK 11 or later, it currently requires JDK 11 to run.
-
-### Create Plug-ins
-
-Gephi is extensible and lets developers create plug-ins to add new features, or to modify existing features. For example, you can create a new layout algorithm, add a metric, create a filter or a tool, support a new file format or database, or modify the visualization.
-
-- [**Plugins Portal**](https://github.com/gephi/gephi/wiki/Plugins)
-
-- [Plugins Quick Start (5 minutes)](https://github.com/gephi/gephi/wiki/Plugin-Quick-Start)
-
-- Browse the [plugins](https://gephi.org/plugins) created by the community
-
-- We've created a [**Plugins Bootcamp**](https://github.com/gephi/gephi-plugins-bootcamp) to learn by examples.
-
-## Gephi Toolkit
-
-The Gephi Toolkit project packages essential Gephi modules (Graph, Layout, Filters, IO…) in a standard Java library which any Java project can use for getting things done. It can be used on a server or command-line tool to do the same things Gephi does but automatically.
-
-- [Download](https://gephi.org/toolkit/)
-
-- [GitHub Project](https://github.com/gephi/gephi-toolkit)
-
-- [Toolkit Portal](https://github.com/gephi/gephi/wiki/Toolkit)
-
-## Localization
-
-We use [Weblate](https://hosted.weblate.org/projects/gephi/) for localization. Follow the guidelines on the [wiki](https://github.com/gephi/gephi/wiki/Localization) for more details how to contribute.
-
-## Icons
-
-Gephi uses icons from various sources. The icons are licensed under the [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) license.
-
-All icons can be found in the `DesktopIcons` module, organised by module name.
-
-## License
-
-Gephi main source code is distributed under the dual license [CDDL 1.0](http://www.opensource.org/licenses/CDDL-1.0) and [GNU General Public License v3](http://www.gnu.org/licenses/gpl.html). Read the [Legal FAQs](http://gephi.github.io/legal/faq/)  to learn more.
-	
-Copyright 2011 Gephi Consortium. All rights reserved.
-
-The contents of this file are subject to the terms of either the GNU
-General Public License Version 3 only ("GPL") or the Common
-Development and Distribution License ("CDDL") (collectively, the
-"License"). You may not use this file except in compliance with the
-License. You can obtain a copy of the License at
-http://gephi.github.io/developers/license/
-or /cddl-1.0.txt and /gpl-3.0.txt. See the License for the
-specific language governing permissions and limitations under the
-License.  When distributing the software, include this License Header
-Notice in each file and include the License files at
-/cddl-1.0.txt and /gpl-3.0.txt. If applicable, add the following below the
-License Header, with the fields enclosed by brackets [] replaced by
-your own identifying information:
-"Portions Copyrighted [year] [name of copyright owner]"
-
-If you wish your version of this file to be governed by only the CDDL
-or only the GPL Version 3, indicate your decision by adding
-"[Contributor] elects to include this software in this distribution
-under the [CDDL or GPL Version 3] license." If you do not indicate a
-single choice of license, a recipient has the option to distribute
-your version of this file under either the CDDL, the GPL Version 3 or
-to extend the choice of license to its licensees as provided above.
-However, if you add GPL Version 3 code and therefore, elected the GPL
-Version 3 license, then the option applies only if the new code is
-made subject to such option by the copyright holder.
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" dir="auto"><a id="user-content-gephi---the-open-graph-viz-platform" class="anchor" aria-hidden="true" tabindex="-1" href="#gephi---the-open-graph-viz-platform"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gephi - 开放图可视化平台</font></font></h1>
+<p dir="auto"><a href="https://github.com/gephi/gephi/actions/workflows/build.yml"><img src="https://github.com/gephi/gephi/actions/workflows/build.yml/badge.svg" alt="建造" style="max-width: 100%;"></a>
+<a href="https://github.com/gephi/gephi/releases/tag/v0.10.1"><img src="https://camo.githubusercontent.com/4e0146c6859cbeb791c67f46ccca2a3ab727bb3f442d8119244101d5bb8185a7/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f646f776e6c6f6164732f67657068692f67657068692f76302e31302e312f746f74616c2e737667" alt="下载" data-canonical-src="https://img.shields.io/github/downloads/gephi/gephi/v0.10.1/total.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/gephi/gephi/releases/"><img src="https://camo.githubusercontent.com/77523296794a962dd807792d284107e791df4b3fff837001a7e9cb950598548c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f646f776e6c6f6164732f67657068692f67657068692f746f74616c2e737667" alt="下载" data-canonical-src="https://img.shields.io/github/downloads/gephi/gephi/total.svg" style="max-width: 100%;"></a>
+<a href="https://hosted.weblate.org/engage/gephi/?utm_source=widget" rel="nofollow"><img src="https://camo.githubusercontent.com/6c56e3ed13b87b28ca87eb247cffe2e03cdb692e03931a6f92f04b4830589668/68747470733a2f2f686f737465642e7765626c6174652e6f72672f776964676574732f67657068692f2d2f7376672d62616467652e737667" alt="翻译进度" data-canonical-src="https://hosted.weblate.org/widgets/gephi/-/svg-badge.svg" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="http://gephi.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gephi</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是一个屡获殊荣的开源平台，用于可视化和操作大型图形。</font><font style="vertical-align: inherit;">它可以在 Windows、Mac OS X 和 Linux 上运行。</font><font style="vertical-align: inherit;">本地化支持英语、法语、西班牙语、日语、俄语、巴西葡萄牙语、中文、捷克语、德语和罗马尼亚语。</font></font></p>
+<ul dir="auto">
+<li>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快速</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">由内置 OpenGL 引擎提供支持，Gephi 能够突破超大型网络的极限。</font><font style="vertical-align: inherit;">可视化多达一百万个元素的网络。</font><font style="vertical-align: inherit;">所有操作（例如布局、过滤、拖动）都是实时运行的。</font></font></p>
+</li>
+<li>
+<p dir="auto"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">简单</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">易于安装和</font></font><a href="https://gephi.github.io/users/quick-start" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">入门</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">以可视化为中心的 UI。</font><font style="vertical-align: inherit;">就像用于图形的 Photoshop™ 一样。</font></font></p>
+</li>
+<li>
+<p dir="auto"><strong><font style="vertical-align: inherit;"></font></strong><font style="vertical-align: inherit;"></font><a href="https://gephi.org/plugins" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用插件</font></font></a><font style="vertical-align: inherit;"><strong><font style="vertical-align: inherit;">模块化</font></strong><font style="vertical-align: inherit;">扩展 Gephi </font><font style="vertical-align: inherit;">。</font></font><a href="https://netbeans.apache.org/tutorials/nbm-quick-start.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该架构构建在Apache Netbeans 平台</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">之上</font><font style="vertical-align: inherit;">，可以通过编写良好的 API 轻松扩展或重用。</font></font></p>
+</li>
+</ul>
+<p dir="auto"><a href="https://gephi.github.io/users/download" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">适用于 Windows、Mac OS X 和 Linux 的 Gephi 并查阅</font></font><a href="https://github.com/gephi/gephi/releases"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发行说明</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font><a href="https://github.com/gephi/gephi/wiki/Datasets"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">示例数据集可以在我们的wiki</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上找到</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/84a044fd44197a24fa3499fc1584478fee1c2bda8e86345151104c34308596d8/68747470733a2f2f67657068692e6769746875622e696f2f696d616765732f73637265656e73686f74732f73656c6563742d746f6f6c2d6d696e692e706e67"><img src="https://camo.githubusercontent.com/84a044fd44197a24fa3499fc1584478fee1c2bda8e86345151104c34308596d8/68747470733a2f2f67657068692e6769746875622e696f2f696d616765732f73637265656e73686f74732f73656c6563742d746f6f6c2d6d696e692e706e67" alt="格菲" data-canonical-src="https://gephi.github.io/images/screenshots/select-tool-mini.png" style="max-width: 100%;"></a></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-install-and-use-gephi" class="anchor" aria-hidden="true" tabindex="-1" href="#install-and-use-gephi"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装和使用Gephi</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在您的计算机上下载并</font></font><a href="https://gephi.github.io/users/install/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gephi。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开始使用</font></font><a href="https://gephi.github.io/users/quick-start/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快速入门</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并按照</font></font><a href="https://gephi.github.io/users/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">教程</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">进行操作。</font><font style="vertical-align: inherit;">加载示例</font></font><a href="https://github.com/gephi/gephi/wiki/Datasets"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数据集</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并开始使用数据。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您遇到任何麻烦或有疑问，请参阅我们的</font></font><a href="https://github.com/gephi/gephi/discussions"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">讨论</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-latest-releases" class="anchor" aria-hidden="true" tabindex="-1" href="#latest-releases"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最新版本</font></font></h2>
+<h3 tabindex="-1" dir="auto"><a id="user-content-stable" class="anchor" aria-hidden="true" tabindex="-1" href="#stable"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">稳定的</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"></font><a href="https://gephi.org/users/download/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">gephi.org</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上的最新稳定版本</font><font style="vertical-align: inherit;">。</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-development-builds" class="anchor" aria-hidden="true" tabindex="-1" href="#development-builds"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开发构建</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开发版本</font></font><a href="https://github.com/gephi/gephi/actions/workflows/release.yml"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">定期生成</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">当前版本是 0.10.2-SNAPSHOT</font></font></p>
+<ul dir="auto">
+<li>
+<p dir="auto"><a href="https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&amp;g=org.gephi&amp;a=gephi&amp;v=0.10.2-SNAPSHOT&amp;c=windows-x64&amp;p=exe" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">gephi-0.10.2-SNAPSHOT-windows-x64.exe</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> (Windows)</font></font></p>
+</li>
+<li>
+<p dir="auto"><a href="https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&amp;g=org.gephi&amp;a=gephi&amp;v=0.10.2-SNAPSHOT&amp;c=windows-x32&amp;p=exe" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">gephi-0.10.2-SNAPSHOT-windows-x32.exe</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> (Windows x32)</font></font></p>
+</li>
+<li>
+<p dir="auto"><a href="https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&amp;g=org.gephi&amp;a=gephi&amp;v=0.10.2-SNAPSHOT&amp;c=macos-x64&amp;p=dmg" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">gephi-0.10.2-SNAPSHOT-macos-x64.dmg</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> (Mac OS X)</font></font></p>
+</li>
+<li>
+<p dir="auto"><a href="https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&amp;g=org.gephi&amp;a=gephi&amp;v=0.10.2-SNAPSHOT&amp;c=macos-aarch64&amp;p=dmg" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">gephi-0.10.2-SNAPSHOT-macos-aarch64.dmg</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（Mac OS X 芯片）</font></font></p>
+</li>
+<li>
+<p dir="auto"><a href="https://oss.sonatype.org/service/local/artifact/maven/content?r=snapshots&amp;g=org.gephi&amp;a=gephi&amp;v=0.10.2-SNAPSHOT&amp;c=linux-x64&amp;p=tar.gz" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">gephi-0.10.2-SNAPSHOT-linux-x64.tar.gz</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> (Linux)</font></font></p>
+</li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-developer-introduction" class="anchor" aria-hidden="true" tabindex="-1" href="#developer-introduction"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开发商介绍</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gephi 用 Ja&ZeroWidthSpace;&ZeroWidthSpace;va 开发，并使用 OpenGL 作为其可视化引擎。</font><font style="vertical-align: inherit;">它构建在 Netbeans 平台之上，遵循松散耦合的模块化架构理念。</font><font style="vertical-align: inherit;">Gephi 被分成多个模块，这些模块通过编写良好的 API 依赖于其他模块。</font><font style="vertical-align: inherit;">插件可以重用现有的 API、创建新服务，甚至用新的实现替换默认实现。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关 API 的概述，</font><font style="vertical-align: inherit;">请参阅</font></font><a href="http://gephi.github.io/gephi/0.9.2/apidocs/index.html" rel="nofollow"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Javadoc 。</font></font></strong></a><font style="vertical-align: inherit;"></font></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-requirements" class="anchor" aria-hidden="true" tabindex="-1" href="#requirements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要求</font></font></h3>
+<ul dir="auto">
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Java JDK 11（或更高版本）</font></font></p>
+</li>
+<li>
+<p dir="auto"><a href="http://maven.apache.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apache Maven</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">版本 3.6.3 或更高版本</font></font></p>
+</li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-checkout-and-build-the-sources" class="anchor" aria-hidden="true" tabindex="-1" href="#checkout-and-build-the-sources"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">检查并构建源代码</font></font></h3>
+<ul dir="auto">
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分叉存储库并克隆</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>  git clone git@github.com:username/gephi.git
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="  git clone git@github.com:username/gephi.git" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运行以下命令或</font></font><a href="https://github.com/gephi/gephi/wiki/How-to-build-Gephi"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 IDE 中打开项目</font></font></a></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>  mvn -T 4 clean install
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="  mvn -T 4 clean install" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建完成后，可以测试运行 Gephi</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>  cd modules/application
+  mvn nbm:cluster-app nbm:run-platform
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="  cd modules/application
+  mvn nbm:cluster-app nbm:run-platform" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请注意，虽然 Gephi 可以使用 JDK 11 或更高版本构建，但它目前需要 JDK 11 才能运行。</font></font></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-create-plug-ins" class="anchor" aria-hidden="true" tabindex="-1" href="#create-plug-ins"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">创建插件</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gephi 是可扩展的，允许开发人员创建插件来添加新功能或修改现有功能。</font><font style="vertical-align: inherit;">例如，您可以创建新的布局算法、添加指标、创建过滤器或工具、支持新的文件格式或数据库，或者修改可视化效果。</font></font></p>
+<ul dir="auto">
+<li>
+<p dir="auto"><a href="https://github.com/gephi/gephi/wiki/Plugins"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">插件门户</font></font></strong></a></p>
+</li>
+<li>
+<p dir="auto"><a href="https://github.com/gephi/gephi/wiki/Plugin-Quick-Start"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">插件快速入门（5 分钟）</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">浏览</font><font style="vertical-align: inherit;">社区创建的</font></font><a href="https://gephi.org/plugins" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">插件</font></font></a><font style="vertical-align: inherit;"></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们创建了一个</font></font><a href="https://github.com/gephi/gephi-plugins-bootcamp"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">插件训练营</font></font></strong></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">来通过示例进行学习。</font></font></p>
+</li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-gephi-toolkit" class="anchor" aria-hidden="true" tabindex="-1" href="#gephi-toolkit"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">格菲工具包</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gephi Toolkit 项目将基本的 Gephi 模块（图形、布局、过滤器、IO…）打包在标准 Java 库中，任何 Java 项目都可以使用该库来完成工作。</font><font style="vertical-align: inherit;">它可以在服务器或命令行工具上使用，以自动执行与 Gephi 相同的操作。</font></font></p>
+<ul dir="auto">
+<li>
+<p dir="auto"><a href="https://gephi.org/toolkit/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><a href="https://github.com/gephi/gephi-toolkit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GitHub 项目</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><a href="https://github.com/gephi/gephi/wiki/Toolkit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">工具包门户</font></font></a></p>
+</li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-localization" class="anchor" aria-hidden="true" tabindex="-1" href="#localization"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">本土化</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们使用</font></font><a href="https://hosted.weblate.org/projects/gephi/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Weblate</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">进行本地化。</font></font><a href="https://github.com/gephi/gephi/wiki/Localization"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请遵循wiki</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上的指南，</font><font style="vertical-align: inherit;">了解如何贡献的更多详细信息。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-icons" class="anchor" aria-hidden="true" tabindex="-1" href="#icons"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图标</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gephi 使用各种来源的图标。</font><font style="vertical-align: inherit;">这些图标已根据</font></font><a href="https://creativecommons.org/licenses/by/3.0/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CC BY 3.0</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">许可证获得许可。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">所有图标都可以在模块中找到</font></font><code>DesktopIcons</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，并按模块名称组织。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-license" class="anchor" aria-hidden="true" tabindex="-1" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="http://www.opensource.org/licenses/CDDL-1.0" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gephi 主要源代码在CDDL 1.0</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="http://www.gnu.org/licenses/gpl.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GNU 通用公共许可证 v3</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">双重许可证下分发</font><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">阅读</font></font><a href="http://gephi.github.io/legal/faq/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">法律常见问题解答</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">  以了解更多信息。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">版权所有 2011 Gephi 联盟。</font><font style="vertical-align: inherit;">版权所有。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">本文件的内容受 GNU 通用公共许可证第 3 版（“GPL”）或通用开发和分发许可证（“CDDL”）（统称为“许可证”）条款的约束。</font><font style="vertical-align: inherit;">除非遵守许可证，否则您不得使用此文件。</font></font><a href="http://gephi.github.io/developers/license/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以在http://gephi.github.io/developers/license/</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或 /cddl-1.0.txt 和 /gpl-3.0.txt获取许可证副本
+</font><font style="vertical-align: inherit;">
+。</font><font style="vertical-align: inherit;">请参阅许可证，了解许可证下管理权限和限制的特定语言。</font><font style="vertical-align: inherit;">分发软件时，请在每个文件中包含此许可证头声明，并包含位于 /cddl-1.0.txt 和 /gpl-3.0.txt 的许可证文件。</font><font style="vertical-align: inherit;">如果适用，请在许可证标头下方添加以下内容，并将方括号 [] 括起来的字段替换为您自己的识别信息：“受版权保护的部分 [年份] [版权所有者姓名]”</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您希望您的此文件版本仅受 CDDL 或 GPL 版本 3 管辖，请通过添加“[贡献者] 选择在 [CDDL 或 GPL 版本 3] 许可下将此软件包含在本发行版中来表明您的决定。 ” </font><font style="vertical-align: inherit;">如果您没有指明单一许可证选择，则接收者可以选择根据 CDDL、GPL 版本 3 分发您的此文件版本，或者将许可证选择范围扩展到其被许可人（如上所述）。</font><font style="vertical-align: inherit;">但是，如果您添加 GPL 版本 3 代码并因此选择了 GPL 版本 3 许可证，则仅当新代码受到版权所有者的此类选项约束时，该选项才适用。</font></font></p>
+</article></div>
